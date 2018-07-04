@@ -1,0 +1,60 @@
+{
+  "name": "gitbook-plugin-dot",
+  "version": "1.0.0",
+  "description": "Gitbook plugin for rendering DOT graph language",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "build": "babel -d lib/ src/",
+    "clean": "del-cli lib/**/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g6123/gitbook-plugin-dot.git"
+  },
+  "keywords": [
+    "gitbook",
+    "gitbook-plugin",
+    "dot",
+    "graphviz"
+  ],
+  "author": "cumul <gg6123@naver.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/g6123/gitbook-plugin-dot/issues"
+  },
+  "homepage": "https://github.com/g6123/gitbook-plugin-dot#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.4.3",
+    "cross-env": "^5.2.0",
+    "del-cli": "^1.1.0",
+    "eslint": "^5.0.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-prettier": "^2.6.1",
+    "prettier": "^1.13.7"
+  },
+  "engines": {
+    "gitbook": "^3"
+  },
+  "gitbook": {
+    "properties": {
+      "bin": {
+        "type": "string",
+        "default": "dot",
+        "description": "A path to the dot binary file"
+      },
+      "args": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [],
+        "description": "Additional arguments passed to dot command"
+      }
+    }
+  }
+}
