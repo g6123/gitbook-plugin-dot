@@ -23,8 +23,7 @@ module.exports = {
           });
 
           dot.once('error', error => {
-            dot.off('exit');
-            dot.kill('SIGTERM');
+            dot.removeAllListeners('exit').kill('SIGTERM');
             reject(error);
           });
 
